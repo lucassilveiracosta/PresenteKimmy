@@ -218,6 +218,10 @@ h1 {
     transition: all 0.3s ease;
 }
 
+.stats-grid h1 {
+    margin-left: -40px;
+}
+
 .stat-card:hover {
     /* MUDANÇA DE COR: Borda e sombra ao passar o mouse */
     border-color: rgb(0, 160, 11);
