@@ -3,7 +3,6 @@ window.onload = () => {
     
     const title = document.querySelector('h1');
     setInterval(() => {
-        // MUDANÇA DE CORES: Agora só tons de verde
         const colors = [
             'rgb(0, 160, 11)',   // O verde principal
             'rgb(50, 200, 60)',  // Um verde mais claro

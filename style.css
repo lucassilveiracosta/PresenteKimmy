@@ -379,18 +379,16 @@ h1 {
     background: #1e1e1e;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    /* ADICIONE ISTO: Essencial para a imagem ficar presa dentro da caixa */
     position: relative;
     overflow: hidden; 
-    transition: transform 0.3s ease; /* Um leve movimento na caixa também fica legal */
+    transition: transform 0.3s ease; 
 }
 
 .timeline-content:hover {
-    transform: translateY(-5px); /* Caixa sobe um pouquinho */
+    transform: translateY(-5px); 
 }
 
 
-/* --- NOVA CLASSE PARA A IMAGEM DE HOVER --- */
 .timeline-hover-img {
     position: absolute;
     top: 0;
@@ -400,15 +398,14 @@ h1 {
     object-fit: cover; /* Garante que a imagem preencha a caixa sem distorcer */
     border-radius: 10px; /* Mantém as bordas arredondadas do pai */
     
-    /* Estado inicial: invisível e ligeiramente ampliada */
     opacity: 0;
     transform: scale(1.1);
     transition: all 0.4s ease-in-out;
-    z-index: 10; /* Garante que ela fique por cima do texto */
+    z-index: 10; 
 }
 
 /* --- O EFEITO AO PASSAR O MOUSE --- */
-/* Quando passar o mouse no .timeline-content, altere a .timeline-hover-img dentro dele */
+
 .timeline-content:hover .timeline-hover-img {
     opacity: 1; /* Torna visível */
     transform: scale(1); /* Volta ao tamanho normal (efeito de zoom-out suave) */
