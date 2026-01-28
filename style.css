@@ -1,0 +1,418 @@
+/* --- Configurações Globais --- */
+html {
+    scroll-behavior: smooth;
+    /* Adiciona um respiro para o header fixo não cobrir o topo das seções */
+    scroll-padding-top: 80px; 
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.95); /* Fundo escuro com leve transparência */
+    border-bottom: 2px solid rgb(0, 160, 11); /* Linha verde no seu tom */
+    z-index: 1000; /* Garante que fique acima de tudo */
+    padding: 15px 0;
+}
+
+.main-header ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.main-header a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.main-header a:hover {
+    color: rgb(0, 160, 11); /* Brilha no seu tom de verde ao passar o mouse */
+}
+
+/* Ajuste o body para não começar por baixo do header */
+body {
+    padding-top: 80px; 
+}
+
+body {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column; /* Garante que as seções fiquem uma embaixo da outra */
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    /* MUDANÇA DE COR: Título principal (versão sólida do seu verde) */
+    color: rgb(0, 160, 11); 
+}
+
+/* --- Galeria de Fotos --- */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Exemplo da classe para mover a foto (se ainda estiver usando) */
+.card.um img {
+    object-position: 50% 60%; 
+    transform: scale(1);
+}
+
+/* O Overlay (A cor principal que você pediu) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* MUDANÇA DE COR: Exatamente o tom que você pediu */
+    background-color: rgba(0, 160, 11, 0.9); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay p {
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.overlay.um p {
+    font-size: 1rem;
+}
+
+.overlay.dois p {
+    font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+/* --- Seção da Mensagem (Sobrancelha) --- */
+.message-section {
+    margin-top: 40px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.message-box {
+    background: #252525;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 700px;
+    width: 90%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    /* MUDANÇA DE COR: Borda lateral */
+    border-left: 5px solid rgb(0, 160, 11);
+    position: relative;
+    overflow: hidden;
+}
+
+.message-box h2 {
+    /* MUDANÇA DE COR: Título da mensagem */
+    color: rgb(0, 160, 11);
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.message-box p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.signature {
+    display: block;
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+    /* MUDANÇA DE COR: Assinatura */
+    color: rgb(0, 160, 11);
+    margin-top: 20px;
+}
+
+.message-box::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 10rem;
+    font-family: serif;
+    /* MUDANÇA DE COR: Aspas decorativas (verde bem clarinho) */
+    color: rgba(0, 160, 11, 0.1); 
+}
+
+/* --- Seção de Stats (Marcos) --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 60px 10%;
+    background-color: #121212;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.stat-card {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    /* MUDANÇA DE COR: Borda e sombra ao passar o mouse */
+    border-color: rgb(0, 160, 11);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 160, 11, 0.3);
+}
+
+.stat-card .icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stat-card h3 {
+    /* MUDANÇA DE COR: Títulos dos cards */
+    color: rgb(0, 160, 11);
+    margin: 10px 0;
+}
+
+.stat-card p {
+    font-size: 0.9rem;
+    color: #bbb;
+    line-height: 1.4;
+}
+
+/* --- Seção Nuvem de Palavras --- */
+.word-cloud-section {
+    padding: 60px 10%;
+    text-align: center;
+    background-color: #1a1a1a;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.word-cloud-section h2 {
+    /* MUDANÇA DE COR: Título da seção */
+    color: rgb(0, 160, 11);
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.word-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.word {
+    color: #e0e0e0; /* Cor padrão neutra */
+    transition: all 0.3s ease;
+    cursor: default;
+    font-weight: bold;
+}
+
+.word:hover {
+    /* MUDANÇA DE COR: Hover da palavra (verde vibrante e sombra) */
+    color: rgb(0, 160, 11);
+    transform: scale(1.2);
+    text-shadow: 0 0 15px rgba(0, 160, 11, 0.6);
+}
+
+/* Hierarquia de cores baseada no seu verde */
+/* T1: O verde principal sólido */
+.t1 { font-size: 4.5rem; color: rgb(0, 160, 11); opacity: 1; }
+
+/* T2: Um verde ligeiramente mais claro/transparente */
+.t2 { font-size: 3rem; color: rgba(0, 160, 11, 0.85); } 
+
+/* T3: Verde mais apagado */
+.t3 { font-size: 2rem; color: rgba(0, 160, 11, 0.6); } 
+
+/* T4: Cinza neutro (mantive para contraste) */
+.t4 { font-size: 1.2rem; color: #bbb; opacity: 0.7; }
+
+
+
+
+
+
+/* Container Principal da Timeline */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px 0;
+}
+
+/* A linha vertical central */
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: rgba(0, 160, 11, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+/* Itens da Timeline */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* As bolinhas na linha central */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: #1a1a1a;
+    border: 4px solid rgb(0, 160, 11);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Alinhamento alternado (Esquerda/Direita) */
+.timeline-item:nth-child(odd) { left: 0; text-align: right; }
+.timeline-item:nth-child(even) { left: 50%; text-align: left; }
+
+.timeline-item:nth-child(even)::after { left: -10px; }
+
+/* Conteúdo dos boxes */
+.timeline-date {
+    font-weight: bold;
+    color: rgb(0, 160, 11);
+    margin-bottom: 5px;
+}
+
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Responsividade para Celular */
+@media screen and (max-width: 600px) {
+    .timeline::before { left: 31px; }
+    .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left !important; }
+    .timeline-item::after { left: 21px !important; }
+    .timeline-item:nth-child(even) { left: 0%; }
+}
+
+/* --- Fim da Timeline --- */
+
+.timeline-content {
+    padding: 20px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    /* ADICIONE ISTO: Essencial para a imagem ficar presa dentro da caixa */
+    position: relative;
+    overflow: hidden; 
+    transition: transform 0.3s ease; /* Um leve movimento na caixa também fica legal */
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px); /* Caixa sobe um pouquinho */
+}
+
+
+/* --- NOVA CLASSE PARA A IMAGEM DE HOVER --- */
+.timeline-hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha a caixa sem distorcer */
+    border-radius: 10px; /* Mantém as bordas arredondadas do pai */
+    
+    /* Estado inicial: invisível e ligeiramente ampliada */
+    opacity: 0;
+    transform: scale(1.1);
+    transition: all 0.4s ease-in-out;
+    z-index: 10; /* Garante que ela fique por cima do texto */
+}
+
+/* --- O EFEITO AO PASSAR O MOUSE --- */
+/* Quando passar o mouse no .timeline-content, altere a .timeline-hover-img dentro dele */
+.timeline-content:hover .timeline-hover-img {
+    opacity: 1; /* Torna visível */
+    transform: scale(1); /* Volta ao tamanho normal (efeito de zoom-out suave) */
+}
