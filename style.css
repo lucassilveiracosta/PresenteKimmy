@@ -414,3 +414,10 @@ h1 {
     opacity: 1; /* Torna visível */
     transform: scale(1); /* Volta ao tamanho normal (efeito de zoom-out suave) */
 }
+
+.stat-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+}
