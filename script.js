@@ -11,7 +11,7 @@ window.onload = () => {
         ];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         title.style.color = randomColor;
-    }, 2500); // Aumentei um pouco o tempo para 2.5s para ficar mais suave
+    }, 2500);
 };
 
 window.addEventListener('scroll', () => {
