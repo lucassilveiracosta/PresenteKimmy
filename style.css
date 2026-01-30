@@ -95,6 +95,11 @@ h1 {
     transition: transform 0.3s ease;
 }
 
+.card.cinco img {
+    object-position: 50% 80%; 
+    transform: scale(1);
+}
+
 /* Exemplo da classe para mover a foto (se ainda estiver usando) */
 .card.um img {
     object-position: 50% 60%; 
@@ -135,6 +140,10 @@ h1 {
 }
 
 .overlay.dois p {
+    font-size: 0.9rem;
+}
+
+.overlay.quatro p {
     font-size: 0.9rem;
 }
 
