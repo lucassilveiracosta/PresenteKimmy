@@ -32,3 +32,40 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+
+
+//Carrossel
+
+let currentSlide = 0;
+
+function moveSlide(direction) {
+    const track = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.music-card');
+    const totalSlides = slides.length;
+
+    currentSlide += direction;
+
+    // Lógica de loop infinito
+    if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+    } else if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+    }
+
+    const offset = -currentSlide * 100;
+    track.style.transform = `translateX(${offset}%)`;
+}
+
+window.onload = () => {
+    // Configurações do canhão de confetes
+    confetti({
+        particleCount: 500,
+        spread: 900,
+        origin: { y: 0.6 },
+        colors: ['#00a00b', '#32c83c', '#ffffff'], // Verde do tema + branco
+        ticks: 200, // Duração da animação na tela
+        gravity: 1,
+        scalar: 1.2
+    });
+};
